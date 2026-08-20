@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: sticker-video-bot
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: MONGO_URI
+        sync: false
+      - key: MONGO_DB_NAME
+        value: sticker_video_bot
+      - key: OWNER_ID
+        sync: false
+      - key: PORT
+        value: 8080
+      - key: MAX_FILE_SIZE_MB
+        value: 50
+      - key: FFMPEG_TIMEOUT
+        value: 120
+      - key: TEMP_DIR
+        value: /tmp/svbot
+      - key: FORCE_SUB_CHANNEL
+        value: ""
